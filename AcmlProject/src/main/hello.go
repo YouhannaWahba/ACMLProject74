@@ -13,12 +13,17 @@ func init (){
 
 func main() {
 	http.HandleFunc("/",index)
+	http.HandleFunc("/maps",maps)
 	http.HandleFunc("/process",processor)
 	http.ListenAndServe(":3000",nil)
 }
 
 func index(w http.ResponseWriter, r *http.Request){
 	tpl.ExecuteTemplate(w,"index.html",nil)
+}
+
+func maps(w http.ResponseWriter, r *http.Request){
+	tpl.ExecuteTemplate(w,"maps.html",nil)
 }
 
 func processor(w http.ResponseWriter , r *http.Request){
