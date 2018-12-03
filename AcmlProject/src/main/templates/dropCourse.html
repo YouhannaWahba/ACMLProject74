@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <body>
+        <h1>Drop Course</h1>
+        <h1>Write '1' If You Want to Drop The Course Or '0' Otherwise</h1>
+        <h1 id="result"></h1>
+        Course 1:Graphics   <input type="text" id="course1">
+        <br>
+        <br>
+        Course 2:ACML   <input type="text" id="course2">
+        <br>
+        <br>
+        Course 3:Analysis   <input type="text" id="course3">
+        <br>
+        <br>
+        Course 4:Microprocessors    <input type="text" id="course4">
+        <br>
+        <br>
+        Course 5:Embedded System    <input type="text" id="course5">
+        <br>
+        <br>
+        <button onclick="drop()">Drop</button>
+        <script>
+            function drop(){
+                var course1 = document.getElementById("course1").value;
+                var course2 = document.getElementById("course2").value;
+                var course3 = document.getElementById("course3").value;
+                var course4 = document.getElementById("course4").value;
+                var course5 = document.getElementById("course5").value;
+                var result = "";
+                if (parseInt(course1) == 1){ result = result + "Graphics, "};
+                if (parseInt(course2) == 1){ result = result + "ACML, "};
+                if (parseInt(course3) == 1){ result = result + "Analysis, "};
+                if (parseInt(course4) == 1){ result = result + "Microprocessors, "};
+                if (parseInt(course5) == 1){ result = result + "Embedded Systems. "};
+                document.getElementById("result").innerHTML="You Dropped : " + result;
+            }    
+        </script>
+    </body>
+</html>

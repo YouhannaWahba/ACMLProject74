@@ -16,6 +16,7 @@ func main() {
 	http.HandleFunc("/maps", maps)
 	http.HandleFunc("/process", processor)
 	http.HandleFunc("/calculateGPA", calculatGPA)
+	http.HandleFunc("/dropCourse", dropCourse)
 	http.ListenAndServe(":3000", nil)
 }
 
@@ -25,6 +26,10 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func maps(w http.ResponseWriter, r *http.Request) {
 	tpl.ExecuteTemplate(w, "maps.html", nil)
+}
+
+func dropCourse(w http.ResponseWriter, r *http.Request) {
+	tpl.ExecuteTemplate(w, "dropCourse.html", nil)
 }
 
 func calculatGPA(w http.ResponseWriter, r *http.Request) {
