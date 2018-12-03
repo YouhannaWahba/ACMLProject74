@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <body>
+        <h1>Calculate GPA</h1>
+        <h1 id="result"></h1>
+        Grade 1<input type="text" id="grade1">
+        <br>
+        <br>
+        Hour 1 <input type="text" id="hour1">
+        <br>
+        <br>
+        Grade 2<input type="text" id="grade2">
+        <br>
+        <br>
+        Hour 2 <input type="text" id="hour2">
+        <br>
+        <br>
+        Grade 3<input type="text" id="grade3">
+        <br>
+        <br>
+        Hour 3 <input type="text" id="hour3">
+        <br>
+        <br>
+        Grade 4<input type="text" id="grade4">
+        <br>
+        <br>
+        Hour 4 <input type="text" id="hour4">
+        <br>
+        <br>
+        Grade 5<input type="text" id="grade5">
+        <br>
+        <br>
+        Hour 5 <input type="text" id="hour5">
+        <br>
+        <br>
+        <button onclick="gpa()">Calculate</button>
+        <script>
+            function gpa(){
+                var field1 = document.getElementById("grade1").value;
+                var field2 = document.getElementById("hour1").value;
+                var field3 = document.getElementById("grade2").value;
+                var field4 = document.getElementById("hour2").value;
+                var field5 = document.getElementById("grade3").value;
+                var field6 = document.getElementById("hour3").value;
+                var field7 = document.getElementById("grade4").value;
+                var field8 = document.getElementById("hour4").value;
+                var field9 = document.getElementById("grade5").value;
+                var field10 = document.getElementById("hour5").value;
+                var result = (parseFloat(field1)*parseFloat(field2)+
+                            parseFloat(field3)*parseFloat(field4)+
+                            parseFloat(field5)*parseFloat(field6)+
+                            parseFloat(field7)*parseFloat(field8)+
+                            parseFloat(field9)*parseFloat(field10))/
+                            (parseFloat(field2)+parseFloat(field4)+
+                            parseFloat(field6)+parseFloat(field8)+
+                            parseFloat(field10));
+                if(!isNaN(result)){
+                    document.getElementById("result").innerHTML="gpa is : "+result;
+                }
+            }
+        </script>
+    </body>
+</html>
