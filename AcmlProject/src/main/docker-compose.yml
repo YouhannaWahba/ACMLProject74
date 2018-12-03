@@ -1,0 +1,26 @@
+version: '2.1'
+services:
+  app:
+  environment:
+    MYAPP_DATABASE_HOST: db
+    MYAPP_CAHCE_HOST: cache
+    MYAPP_WEB_PORT: 3000
+  depends_on:
+    db:
+      conditions: service_healthy
+    cache:
+      condition: service_healthy
+    maps:
+      conditions: service_healthy
+  ports:
+    - 3000:3000
+db:
+  image: healthcheck/postgres:alpine
+  environment: 
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: postgres
+cache:
+  image: healthcheck/redis:alpine
+maps:
+  api: helathcheck/maps:api
